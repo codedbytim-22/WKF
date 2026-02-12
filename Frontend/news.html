@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News & Updates - Wanjiku Kimiti Foundation</title>
+    <meta
+      name="description"
+      content="Latest news, announcements, and impact reports from WKF."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="Assets/CSS/style.css" />
+    <style>
+      .news-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: var(--spacing-lg);
+      }
+      .featured-news {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-lg);
+        background: var(--white);
+        border-radius: var(--border-radius-lg);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        margin-bottom: var(--spacing-md);
+      }
+      .news-meta {
+        display: flex;
+        gap: var(--spacing-sm);
+        color: var(--dark-gray);
+        font-size: 0.875rem;
+        margin-bottom: var(--spacing-sm);
+      }
+      .sidebar-widget {
+        background: var(--white);
+        padding: var(--spacing-md);
+        border-radius: var(--border-radius-lg);
+        margin-bottom: var(--spacing-md);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <img src="assets/images/logo.png" alt="WKF Logo" />
+            <h1>W.K.F</h1>
+          </div>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="programs.html" class="nav-link">Programs</a></li>
+            <li><a href="news.html" class="nav-link active">News</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li>
+              <a href="donate.html" class="btn btn-primary">Donate Now</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="section-sm bg-light">
+      <div class="container text-center">
+        <h1>News & Updates</h1>
+        <p style="max-width: 700px; margin: 0 auto">
+          Stay informed about our latest programs, achievements, and ways to get
+          involved.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="news-grid">
+          <!-- Main News Column -->
+          <div>
+            <!-- Featured News -->
+            <div class="featured-news">
+              <div>
+                <img
+                  src="assets/images/news/featured1.jpg"
+                  alt="Featured news"
+                  style="width: 100%; height: 100%; object-fit: cover"
+                />
+              </div>
+              <div style="padding: var(--spacing-lg)">
+                <div class="news-meta">
+                  <span
+                    ><i class="far fa-calendar-alt"></i> February 10, 2026</span
+                  >
+                  <span><i class="far fa-user"></i> Admin</span>
+                  <span><i class="far fa-folder"></i> Education</span>
+                </div>
+                <h2 style="margin-bottom: var(--spacing-sm)">
+                  500 New Scholarships Awarded for 2026 Academic Year
+                </h2>
+                <p style="margin-bottom: var(--spacing-md)">
+                  Thanks to our generous donors, WKF has awarded 500
+                  scholarships to bright students from vulnerable backgrounds
+                  across 10 counties. The scholarships cover tuition, uniforms,
+                  and learning materials.
+                </p>
+                <a href="#" class="btn btn-secondary">Read More</a>
+              </div>
+            </div>
+
+            <!-- Regular News Posts -->
+            <div
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--spacing-md);
+              "
+            >
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/news/news1.jpg" alt="Peace forum" />
+                </div>
+                <div class="card-content">
+                  <div class="news-meta">
+                    <span>Feb 5, 2026</span>
+                  </div>
+                  <h3>Youth Peace Forum Brings 200+ Participants</h3>
+                  <p>
+                    Young peace ambassadors from six counties gathered in Nakuru
+                    to share experiences and develop action plans for promoting
+                    peace in their communities.
+                  </p>
+                  <a
+                    href="#"
+                    class="btn btn-sm btn-outline"
+                    style="margin-top: 10px"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/news/news2.jpg" alt="Mentorship" />
+                </div>
+                <div class="card-content">
+                  <div class="news-meta">
+                    <span>Jan 28, 2026</span>
+                  </div>
+                  <h3>Mentorship Program Expands to 5 New Schools</h3>
+                  <p>
+                    With 30 new volunteer mentors, we are expanding our
+                    after-school mentorship program to reach students in Kisumu,
+                    Eldoret, and Meru.
+                  </p>
+                  <a
+                    href="#"
+                    class="btn btn-sm btn-outline"
+                    style="margin-top: 10px"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/news/news3.jpg" alt="Donor visit" />
+                </div>
+                <div class="card-content">
+                  <div class="news-meta">
+                    <span>Jan 15, 2026</span>
+                  </div>
+                  <h3>Donors Visit Project Sites in Kiambu</h3>
+                  <p>
+                    A delegation of monthly donors visited our scholarship
+                    recipients and saw firsthand the impact of their
+                    contributions.
+                  </p>
+                  <a
+                    href="#"
+                    class="btn btn-sm btn-outline"
+                    style="margin-top: 10px"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-image">
+                  <img src="assets/images/news/news4.jpg" alt="Annual report" />
+                </div>
+                <div class="card-content">
+                  <div class="news-meta">
+                    <span>Jan 10, 2026</span>
+                  </div>
+                  <h3>2025 Annual Impact Report Released</h3>
+                  <p>
+                    Our annual report highlights achievements, financial
+                    accountability, and stories of change from the past year.
+                    Download the full report.
+                  </p>
+                  <a
+                    href="#"
+                    class="btn btn-sm btn-outline"
+                    style="margin-top: 10px"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-top: var(--spacing-lg);
+              "
+            >
+              <span
+                style="
+                  background: var(--primary-blue);
+                  color: var(--white);
+                  padding: 8px 16px;
+                  border-radius: var(--border-radius-sm);
+                "
+                >1</span
+              >
+              <a
+                href="#"
+                style="
+                  background: var(--light-gray);
+                  color: var(--black);
+                  padding: 8px 16px;
+                  border-radius: var(--border-radius-sm);
+                "
+                >2</a
+              >
+              <a
+                href="#"
+                style="
+                  background: var(--light-gray);
+                  color: var(--black);
+                  padding: 8px 16px;
+                  border-radius: var(--border-radius-sm);
+                "
+                >3</a
+              >
+              <a
+                href="#"
+                style="
+                  background: var(--light-gray);
+                  color: var(--black);
+                  padding: 8px 16px;
+                  border-radius: var(--border-radius-sm);
+                "
+                >4</a
+              >
+              <a
+                href="#"
+                style="
+                  background: var(--light-gray);
+                  color: var(--black);
+                  padding: 8px 16px;
+                  border-radius: var(--border-radius-sm);
+                "
+                >Next</a
+              >
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div>
+            <!-- Search -->
+            <div class="sidebar-widget">
+              <h3 style="margin-bottom: var(--spacing-md)">Search News</h3>
+              <div style="display: flex">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search..."
+                  style="
+                    border-radius: var(--border-radius-md) 0 0
+                      var(--border-radius-md);
+                  "
+                />
+                <button
+                  style="
+                    background: var(--primary-blue);
+                    color: var(--white);
+                    border: none;
+                    padding: 0 20px;
+                    border-radius: 0 var(--border-radius-md)
+                      var(--border-radius-md) 0;
+                    cursor: pointer;
+                  "
+                >
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="sidebar-widget">
+              <h3 style="margin-bottom: var(--spacing-md)">Categories</h3>
+              <ul style="list-style: none">
+                <li
+                  style="
+                    margin-bottom: 10px;
+                    display: flex;
+                    justify-content: space-between;
+                  "
+                >
+                  <a href="#">Education</a>
+                  <span style="color: var(--dark-gray)">12</span>
+                </li>
+                <li
+                  style="
+                    margin-bottom: 10px;
+                    display: flex;
+                    justify-content: space-between;
+                  "
+                >
+                  <a href="#">Empowerment</a>
+                  <span style="color: var(--dark-gray)">8</span>
+                </li>
+                <li
+                  style="
+                    margin-bottom: 10px;
+                    display: flex;
+                    justify-content: space-between;
+                  "
+                >
+                  <a href="#">Peace</a>
+                  <span style="color: var(--dark-gray)">6</span>
+                </li>
+                <li
+                  style="
+                    margin-bottom: 10px;
+                    display: flex;
+                    justify-content: space-between;
+                  "
+                >
+                  <a href="#">Events</a>
+                  <span style="color: var(--dark-gray)">5</span>
+                </li>
+                <li style="display: flex; justify-content: space-between">
+                  <a href="#">Reports</a>
+                  <span style="color: var(--dark-gray)">4</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Recent Posts -->
+            <div class="sidebar-widget">
+              <h3 style="margin-bottom: var(--spacing-md)">Recent Posts</h3>
+              <div style="display: flex; flex-direction: column; gap: 15px">
+                <div style="display: flex; gap: 10px">
+                  <img
+                    src="assets/images/news/thumb1.jpg"
+                    alt="thumb"
+                    style="
+                      width: 70px;
+                      height: 70px;
+                      object-fit: cover;
+                      border-radius: var(--border-radius-sm);
+                    "
+                  />
+                  <div>
+                    <h4 style="margin-bottom: 5px; font-size: 1rem">
+                      500 New Scholarships Awarded
+                    </h4>
+                    <p style="font-size: 0.8rem; color: var(--dark-gray)">
+                      Feb 10, 2026
+                    </p>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 10px">
+                  <img
+                    src="assets/images/news/thumb2.jpg"
+                    alt="thumb"
+                    style="
+                      width: 70px;
+                      height: 70px;
+                      object-fit: cover;
+                      border-radius: var(--border-radius-sm);
+                    "
+                  />
+                  <div>
+                    <h4 style="margin-bottom: 5px; font-size: 1rem">
+                      Youth Peace Forum Success
+                    </h4>
+                    <p style="font-size: 0.8rem; color: var(--dark-gray)">
+                      Feb 5, 2026
+                    </p>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 10px">
+                  <img
+                    src="assets/images/news/thumb3.jpg"
+                    alt="thumb"
+                    style="
+                      width: 70px;
+                      height: 70px;
+                      object-fit: cover;
+                      border-radius: var(--border-radius-sm);
+                    "
+                  />
+                  <div>
+                    <h4 style="margin-bottom: 5px; font-size: 1rem">
+                      Mentorship Program Expands
+                    </h4>
+                    <p style="font-size: 0.8rem; color: var(--dark-gray)">
+                      Jan 28, 2026
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div
+              class="sidebar-widget"
+              style="background: var(--primary-blue); color: var(--white)"
+            >
+              <h3 style="color: var(--white); margin-bottom: var(--spacing-md)">
+                Newsletter
+              </h3>
+              <p
+                style="
+                  color: rgba(255, 255, 255, 0.9);
+                  margin-bottom: var(--spacing-sm);
+                "
+              >
+                Subscribe to get updates in your inbox.
+              </p>
+              <form>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your email"
+                  style="margin-bottom: 10px"
+                  required
+                />
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  style="width: 100%"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <!-- same footer -->
+      <div class="container">
+        <div class="footer-content">
+          <div>
+            <h3>Wanjiku Kimiti Foundation</h3>
+            <p style="color: rgba(255, 255, 255, 0.8)">
+              Empowering children through education and peace advocacy.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div>
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="programs.html">Our Programs</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="news.html">News & Updates</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="donate.html">Donate</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Contact Info</h3>
+            <ul class="footer-links">
+              <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+              <li><i class="fas fa-phone"></i> +254 700 000000</li>
+              <li><i class="fas fa-envelope"></i> info@wkf.org</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Newsletter</h3>
+            <form id="newsletterForm">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Your email"
+                required
+              />
+              <button
+                type="submit"
+                class="btn btn-primary"
+                style="margin-top: 10px; width: 100%"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Wanjiku Kimiti Foundation. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="Assets/JS/main.js"></script>
+  </body>
+</html>

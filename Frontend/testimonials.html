@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonials - Wanjiku Kimiti Foundation</title>
+    <meta
+      name="description"
+      content="Read stories from beneficiaries, donors, and partners about the impact of WKF's work."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="Assets/CSS/style.css" />
+    <style>
+      .testimonial-card {
+        background: var(--white);
+        border-radius: var(--border-radius-lg);
+        padding: var(--spacing-lg);
+        box-shadow: var(--shadow-sm);
+        position: relative;
+        margin-bottom: var(--spacing-md);
+      }
+      .testimonial-card::before {
+        content: "\201C";
+        font-size: 5rem;
+        color: rgba(255, 107, 53, 0.2);
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        font-family: Georgia, serif;
+      }
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        margin-top: var(--spacing-md);
+      }
+      .author-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <img src="assets/images/logo.png" alt="WKF Logo" />
+            <h1>W.K.F</h1>
+          </div>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="programs.html" class="nav-link">Programs</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="news.html" class="nav-link">News</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li>
+              <a href="donate.html" class="btn btn-primary">Donate Now</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="section-sm bg-light">
+      <div class="container text-center">
+        <h1>Stories of Impact</h1>
+        <p style="max-width: 700px; margin: 0 auto">
+          Hear from the children, families, donors, and partners whose lives
+          have been touched by your support.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+          "
+        >
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card">
+            <p
+              style="font-size: 1.125rem; font-style: italic; line-height: 1.8"
+            >
+              "Before WKF, I had lost hope of finishing school. They gave me a
+              scholarship and a mentor who believed in me. Today, I am in my
+              second year of nursing school. I want to give back to my community
+              just like they did for me."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="assets/images/testimonials/mercy.jpg"
+                alt="Mercy"
+                class="author-image"
+              />
+              <div>
+                <h4 style="margin-bottom: 5px">Mercy Akinyi</h4>
+                <p style="color: var(--accent-orange); margin-bottom: 0">
+                  Scholarship Beneficiary
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p
+              style="font-size: 1.125rem; font-style: italic; line-height: 1.8"
+            >
+              "I've been donating to WKF monthly for three years. What I love
+              most is the transparency – I receive updates on exactly how my
+              money is used and the progress of programs. It's rewarding to see
+              real change."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="assets/images/testimonials/michael.jpg"
+                alt="Michael"
+                class="author-image"
+              />
+              <div>
+                <h4 style="margin-bottom: 5px">Michael Omondi</h4>
+                <p style="color: var(--accent-orange); margin-bottom: 0">
+                  Monthly Donor
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p
+              style="font-size: 1.125rem; font-style: italic; line-height: 1.8"
+            >
+              "The peace dialogues facilitated by WKF brought together our
+              community which was deeply divided. For the first time in years,
+              we sat down, listened to each other, and found common ground. Our
+              children now play together without fear."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="assets/images/testimonials/fatuma.jpg"
+                alt="Fatuma"
+                class="author-image"
+              />
+              <div>
+                <h4 style="margin-bottom: 5px">Fatuma Hassan</h4>
+                <p style="color: var(--accent-orange); margin-bottom: 0">
+                  Community Leader, Garissa
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p
+              style="font-size: 1.125rem; font-style: italic; line-height: 1.8"
+            >
+              "Volunteering as a mentor with WKF has been one of the most
+              fulfilling experiences. Seeing the transformation in the youth –
+              their confidence, their dreams – reminds me why I became a
+              teacher."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="assets/images/testimonials/james.jpg"
+                alt="James"
+                class="author-image"
+              />
+              <div>
+                <h4 style="margin-bottom: 5px">James Kariuki</h4>
+                <p style="color: var(--accent-orange); margin-bottom: 0">
+                  Volunteer Mentor
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p
+              style="font-size: 1.125rem; font-style: italic; line-height: 1.8"
+            >
+              "Our school partnership with WKF brought a new library and
+              computer lab. Attendance has improved, and our students'
+              performance has never been better. We are grateful for this
+              partnership."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="assets/images/testimonials/principal.jpg"
+                alt="Principal"
+                class="author-image"
+              />
+              <div>
+                <h4 style="margin-bottom: 5px">Mary Wanjiru</h4>
+                <p style="color: var(--accent-orange); margin-bottom: 0">
+                  Principal, Mwiki Primary
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <p
+              style="font-size: 1.125rem; font-style: italic; line-height: 1.8"
+            >
+              "My daughter was shy and lacked confidence. Through WKF's
+              empowerment program, she discovered her leadership skills and even
+              led a community cleanup. I can't thank them enough."
+            </p>
+            <div class="testimonial-author">
+              <img
+                src="assets/images/testimonials/parent.jpg"
+                alt="Parent"
+                class="author-image"
+              />
+              <div>
+                <h4 style="margin-bottom: 5px">David Otieno</h4>
+                <p style="color: var(--accent-orange); margin-bottom: 0">
+                  Parent
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Your Story CTA -->
+        <div style="text-align: center; margin-top: var(--spacing-xl)">
+          <h2 style="margin-bottom: var(--spacing-sm)">Share Your Story</h2>
+          <p style="max-width: 600px; margin: 0 auto var(--spacing-md)">
+            Has WKF made a difference in your life or community? We'd love to
+            hear from you.
+          </p>
+          <a href="contact.html" class="btn btn-primary">Share Your Story</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <!-- same footer -->
+      <div class="container">
+        <div class="footer-content">
+          <div>
+            <h3>Wanjiku Kimiti Foundation</h3>
+            <p style="color: rgba(255, 255, 255, 0.8)">
+              Empowering children through education and peace advocacy.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div>
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="programs.html">Our Programs</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="news.html">News & Updates</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="donate.html">Donate</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Contact Info</h3>
+            <ul class="footer-links">
+              <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+              <li><i class="fas fa-phone"></i> +254 700 000000</li>
+              <li><i class="fas fa-envelope"></i> info@wkf.org</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Newsletter</h3>
+            <form id="newsletterForm">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Your email"
+                required
+              />
+              <button
+                type="submit"
+                class="btn btn-primary"
+                style="margin-top: 10px; width: 100%"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Wanjiku Kimiti Foundation. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="Assets/JS/main.js"></script>
+  </body>
+</html>

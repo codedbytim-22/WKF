@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Donors - W.K.F Admin</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .donor-card {
+        background: var(--white);
+        border-radius: var(--border-radius-lg);
+        padding: var(--spacing-md);
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        box-shadow: var(--shadow-sm);
+        margin-bottom: var(--spacing-md);
+      }
+      .donor-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: var(--light-gray);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--primary-blue);
+      }
+      .donor-info {
+        flex: 1;
+      }
+      .donor-stats {
+        display: flex;
+        gap: var(--spacing-md);
+        margin-left: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="admin-wrapper">
+      <!-- Sidebar (same as donations.html) -->
+      <aside class="admin-sidebar">
+        <div class="sidebar-header">
+          <div class="logo" style="color: var(--white)">
+            <img
+              src="../assets/images/logo-white.png"
+              alt="WKF Logo"
+              style="filter: brightness(0) invert(1)"
+            />
+            <h1 style="color: var(--white)">W.K.F Admin</h1>
+          </div>
+        </div>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="dashboard.html"
+              ><i class="fas fa-tachometer-alt"></i> Dashboard</a
+            >
+          </li>
+          <li>
+            <a href="donations.html"
+              ><i class="fas fa-hand-holding-usd"></i> Donations</a
+            >
+          </li>
+          <li>
+            <a href="donors.html" class="active"
+              ><i class="fas fa-users"></i> Donors</a
+            >
+          </li>
+          <li>
+            <a href="content.html"
+              ><i class="fas fa-edit"></i> Content Management</a
+            >
+          </li>
+          <li>
+            <a href="gallery-admin.html"
+              ><i class="fas fa-images"></i> Gallery</a
+            >
+          </li>
+          <li>
+            <a href="programs-admin.html"
+              ><i class="fas fa-tasks"></i> Programs</a
+            >
+          </li>
+          <li>
+            <a href="news-admin.html"><i class="fas fa-newspaper"></i> News</a>
+          </li>
+          <li>
+            <a href="testimonials-admin.html"
+              ><i class="fas fa-quote-right"></i> Testimonials</a
+            >
+          </li>
+          <li>
+            <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+          </li>
+          <li style="margin-top: auto">
+            <a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="admin-main">
+        <header class="admin-header">
+          <div>
+            <h2 style="margin-bottom: 0">Donors Management</h2>
+            <p style="color: var(--dark-gray)">
+              Manage donor information and communication
+            </p>
+          </div>
+          <div>
+            <button class="btn btn-primary">
+              <i class="fas fa-envelope"></i> Email Donors
+            </button>
+            <button class="btn btn-outline">
+              <i class="fas fa-file-export"></i> Export
+            </button>
+          </div>
+        </header>
+
+        <div style="padding: var(--spacing-md)">
+          <!-- Search & Filter -->
+          <div
+            style="
+              display: flex;
+              gap: var(--spacing-md);
+              margin-bottom: var(--spacing-md);
+            "
+          >
+            <div style="flex: 1">
+              <div style="display: flex">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search by name, email, phone..."
+                  style="
+                    border-radius: var(--border-radius-md) 0 0
+                      var(--border-radius-md);
+                  "
+                />
+                <button
+                  style="
+                    background: var(--primary-blue);
+                    color: var(--white);
+                    border: none;
+                    padding: 0 20px;
+                    border-radius: 0 var(--border-radius-md)
+                      var(--border-radius-md) 0;
+                    cursor: pointer;
+                  "
+                >
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+            <div>
+              <select class="form-control">
+                <option>All Donors</option>
+                <option>One-time</option>
+                <option>Monthly</option>
+                <option>Major Donors</option>
+              </select>
+            </div>
+            <div>
+              <select class="form-control">
+                <option>Sort by: Recent</option>
+                <option>Sort by: Name</option>
+                <option>Sort by: Total Donated</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Donors List -->
+          <div
+            style="
+              background: var(--white);
+              border-radius: var(--border-radius-lg);
+              padding: var(--spacing-md);
+            "
+          >
+            <div class="donor-card">
+              <div class="donor-avatar">JM</div>
+              <div class="donor-info">
+                <h4 style="margin-bottom: 5px">John Mwangi</h4>
+                <p style="margin-bottom: 0; color: var(--dark-gray)">
+                  john.mwangi@email.com | +254 722 123456
+                </p>
+                <p style="margin-bottom: 0; color: var(--dark-gray)">
+                  Donor since: Jan 2025
+                </p>
+              </div>
+              <div class="donor-stats">
+                <div style="text-align: right">
+                  <p
+                    style="
+                      font-weight: 600;
+                      color: var(--primary-blue);
+                      margin-bottom: 5px;
+                    "
+                  >
+                    Total Donated
+                  </p>
+                  <h3 style="margin-bottom: 0">KSH 45,000</h3>
+                </div>
+                <div style="text-align: right">
+                  <p
+                    style="
+                      font-weight: 600;
+                      color: var(--primary-green);
+                      margin-bottom: 5px;
+                    "
+                  >
+                    Donations
+                  </p>
+                  <h3 style="margin-bottom: 0">7</h3>
+                </div>
+                <div>
+                  <button class="action-btn"><i class="fas fa-eye"></i></button>
+                  <button class="action-btn">
+                    <i class="fas fa-envelope"></i>
+                  </button>
+                  <button class="action-btn">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="donor-card">
+              <div class="donor-avatar">SW</div>
+              <div class="donor-info">
+                <h4 style="margin-bottom: 5px">Sarah Wanjiku</h4>
+                <p style="margin-bottom: 0; color: var(--dark-gray)">
+                  sarah.w@email.com | +254 733 789012
+                </p>
+                <p style="margin-bottom: 0; color: var(--dark-gray)">
+                  Donor since: Mar 2025
+                </p>
+              </div>
+              <div class="donor-stats">
+                <div style="text-align: right">
+                  <p
+                    style="
+                      font-weight: 600;
+                      color: var(--primary-blue);
+                      margin-bottom: 5px;
+                    "
+                  >
+                    Total Donated
+                  </p>
+                  <h3 style="margin-bottom: 0">KSH 28,500</h3>
+                </div>
+                <div style="text-align: right">
+                  <p
+                    style="
+                      font-weight: 600;
+                      color: var(--primary-green);
+                      margin-bottom: 5px;
+                    "
+                  >
+                    Donations
+                  </p>
+                  <h3 style="margin-bottom: 0">5</h3>
+                </div>
+                <div>
+                  <button class="action-btn"><i class="fas fa-eye"></i></button>
+                  <button class="action-btn">
+                    <i class="fas fa-envelope"></i>
+                  </button>
+                  <button class="action-btn">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="donor-card">
+              <div class="donor-avatar">PO</div>
+              <div class="donor-info">
+                <h4 style="margin-bottom: 5px">Peter Odhiambo</h4>
+                <p style="margin-bottom: 0; color: var(--dark-gray)">
+                  peter.o@email.com | +254 711 345678
+                </p>
+                <p style="margin-bottom: 0; color: var(--dark-gray)">
+                  Donor since: Jun 2025
+                </p>
+              </div>
+              <div class="donor-stats">
+                <div style="text-align: right">
+                  <p
+                    style="
+                      font-weight: 600;
+                      color: var(--primary-blue);
+                      margin-bottom: 5px;
+                    "
+                  >
+                    Total Donated
+                  </p>
+                  <h3 style="margin-bottom: 0">KSH 62,000</h3>
+                </div>
+                <div style="text-align: right">
+                  <p
+                    style="
+                      font-weight: 600;
+                      color: var(--primary-green);
+                      margin-bottom: 5px;
+                    "
+                  >
+                    Donations
+                  </p>
+                  <h3 style="margin-bottom: 0">12</h3>
+                </div>
+                <div>
+                  <button class="action-btn"><i class="fas fa-eye"></i></button>
+                  <button class="action-btn">
+                    <i class="fas fa-envelope"></i>
+                  </button>
+                  <button class="action-btn">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="donor-card">
+              <div class="donor-avatar">MK</div>
+              <div class="donor-info">
+                <h4 style="margin-bottom: 5px">Mary Kimani</h4>
+                <p style="margin-bottom: 0; color: var(--dark-gray)">
+                  mary.k@email.com | +254 722 901234
+                </p>
+                <p style="margin-bottom: 0; color: var(--dark-gray)">
+                  Donor since: Feb 2026
+                </p>
+              </div>
+              <div class="donor-stats">
+                <div style="text-align: right">
+                  <p
+                    style="
+                      font-weight: 600;
+                      color: var(--primary-blue);
+                      margin-bottom: 5px;
+                    "
+                  >
+                    Total Donated
+                  </p>
+                  <h3 style="margin-bottom: 0">KSH 2,500</h3>
+                </div>
+                <div style="text-align: right">
+                  <p
+                    style="
+                      font-weight: 600;
+                      color: var(--primary-green);
+                      margin-bottom: 5px;
+                    "
+                  >
+                    Donations
+                  </p>
+                  <h3 style="margin-bottom: 0">1</h3>
+                </div>
+                <div>
+                  <button class="action-btn"><i class="fas fa-eye"></i></button>
+                  <button class="action-btn">
+                    <i class="fas fa-envelope"></i>
+                  </button>
+                  <button class="action-btn">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                margin-top: var(--spacing-md);
+              "
+            >
+              <button class="btn btn-outline">Load More Donors</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

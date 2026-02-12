@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate - Wanjiku Kimiti Foundation</title>
+
+    <!-- Fonts, Icons, Styles -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="Assets/CSS/style.css" />
+  </head>
+  <body>
+    <!-- Header (same as index) -->
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <img src="assets/images/logo.png" alt="WKF Logo" />
+            <h1>W.K.F</h1>
+          </div>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="programs.html" class="nav-link">Programs</a></li>
+            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li><a href="news.html" class="nav-link">News</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li>
+              <a href="donate.html" class="btn btn-primary active"
+                >Donate Now</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section-sm bg-light">
+      <div class="container text-center">
+        <h1>Make a Donation</h1>
+        <p style="max-width: 600px; margin: 0 auto">
+          Your generous contribution helps us provide education, empower
+          children, and advocate for peace. Every donation makes a difference.
+        </p>
+      </div>
+    </section>
+
+    <!-- Donation Form Section -->
+    <section class="section">
+      <div class="container">
+        <div class="card" style="max-width: 800px; margin: 0 auto">
+          <div class="card-content">
+            <h2 style="text-align: center; margin-bottom: var(--spacing-lg)">
+              Donation Information
+            </h2>
+
+            <form id="donationForm">
+              <!-- Donor Information -->
+              <h3
+                style="
+                  color: var(--primary-blue);
+                  margin-bottom: var(--spacing-md);
+                "
+              >
+                Personal Information
+              </h3>
+
+              <div class="form-group">
+                <label for="fullName" class="form-label">Full Name *</label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  class="form-control"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="you@example.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-control"
+                  placeholder="+254 XXX XXX XXX"
+                />
+              </div>
+
+              <!-- Donation Amount -->
+              <h3
+                style="
+                  color: var(--primary-blue);
+                  margin-bottom: var(--spacing-md);
+                "
+              >
+                Donation Amount
+              </h3>
+
+              <div class="donation-amounts">
+                <div class="amount-option">
+                  <input
+                    type="radio"
+                    name="amount"
+                    id="amount500"
+                    value="500"
+                  />
+                  <label for="amount500">KSH 500</label>
+                </div>
+                <div class="amount-option">
+                  <input
+                    type="radio"
+                    name="amount"
+                    id="amount1000"
+                    value="1000"
+                  />
+                  <label for="amount1000">KSH 1,000</label>
+                </div>
+                <div class="amount-option">
+                  <input
+                    type="radio"
+                    name="amount"
+                    id="amount5000"
+                    value="5000"
+                  />
+                  <label for="amount5000">KSH 5,000</label>
+                </div>
+                <div class="amount-option">
+                  <input
+                    type="radio"
+                    name="amount"
+                    id="amount10000"
+                    value="10000"
+                  />
+                  <label for="amount10000">KSH 10,000</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="customAmount" class="form-label"
+                  >Custom Amount (KSH)</label
+                >
+                <input
+                  type="number"
+                  id="customAmount"
+                  name="customAmount"
+                  class="form-control"
+                  placeholder="Enter amount"
+                  min="100"
+                />
+              </div>
+
+              <!-- Program Selection -->
+              <div class="form-group">
+                <label for="program" class="form-label"
+                  >Allocate your donation to</label
+                >
+                <select id="program" name="program" class="form-control">
+                  <option value="general">Where most needed</option>
+                  <option value="education">Education Program</option>
+                  <option value="empowerment">Child Empowerment Program</option>
+                  <option value="peace">Peace Advocacy Program</option>
+                </select>
+              </div>
+
+              <!-- Payment Method -->
+              <h3
+                style="
+                  color: var(--primary-blue);
+                  margin-bottom: var(--spacing-md);
+                "
+              >
+                Payment Method
+              </h3>
+
+              <div
+                style="
+                  display: flex;
+                  gap: var(--spacing-md);
+                  margin-bottom: var(--spacing-lg);
+                "
+              >
+                <div style="flex: 1">
+                  <input
+                    type="radio"
+                    name="paymentMethod"
+                    id="mpesa"
+                    value="mpesa"
+                    style="display: none"
+                  />
+                  <label
+                    for="mpesa"
+                    style="
+                      display: block;
+                      padding: 1rem;
+                      text-align: center;
+                      border: 2px solid var(--light-gray);
+                      border-radius: var(--border-radius-md);
+                      cursor: pointer;
+                      transition: all var(--transition-fast);
+                    "
+                  >
+                    <i
+                      class="fas fa-mobile-alt"
+                      style="font-size: 24px; color: var(--primary-green)"
+                    ></i>
+                    <p style="margin-top: 0.5rem; font-weight: 600">M-PESA</p>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Additional Message -->
+              <div class="form-group">
+                <label for="message" class="form-label"
+                  >Leave a message (optional)</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-control"
+                  rows="3"
+                  placeholder="Share why you're supporting our cause..."
+                ></textarea>
+              </div>
+
+              <!-- Tax Receipt -->
+              <div style="margin-bottom: var(--spacing-lg)">
+                <label style="display: flex; align-items: center; gap: 10px">
+                  <input
+                    type="checkbox"
+                    name="taxReceipt"
+                    value="yes"
+                    checked
+                  />
+                  <span
+                    >I would like to receive a tax receipt for this
+                    donation</span
+                  >
+                </label>
+              </div>
+
+              <!-- Submit Button -->
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg"
+                style="width: 100%"
+              >
+                Complete Donation
+              </button>
+
+              <p
+                style="
+                  text-align: center;
+                  margin-top: var(--spacing-md);
+                  font-size: 0.875rem;
+                  color: var(--dark-gray);
+                "
+              >
+                <i class="fas fa-lock"></i> Your information is secure and
+                encrypted. We never share your details.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <!-- Same as index.html footer -->
+      <div class="container">
+        <div class="footer-content">
+          <!-- ... footer content ... -->
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Wanjiku Kimiti Foundation. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="Assets/JS/main.js"></script>
+    <script>
+      // Pre-select program from URL parameter
+      document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const program = urlParams.get("program");
+        if (program) {
+          const programSelect = document.getElementById("program");
+          if (programSelect) {
+            programSelect.value = program;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

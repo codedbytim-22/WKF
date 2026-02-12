@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - W.K.F Management System</title>
+
+    <!-- Fonts & Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <style>
+      /* Additional admin-specific styles */
+      .recent-activity {
+        background: var(--white);
+        border-radius: var(--border-radius-lg);
+        padding: var(--spacing-md);
+        margin-top: var(--spacing-md);
+      }
+
+      .activity-item {
+        display: flex;
+        align-items: center;
+        padding: var(--spacing-sm) 0;
+        border-bottom: 1px solid var(--light-gray);
+      }
+
+      .activity-item:last-child {
+        border-bottom: none;
+      }
+
+      .activity-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: var(--spacing-sm);
+      }
+
+      .activity-details {
+        flex: 1;
+      }
+
+      .activity-time {
+        font-size: 0.875rem;
+        color: var(--dark-gray);
+      }
+
+      .chart-container {
+        background: var(--white);
+        border-radius: var(--border-radius-lg);
+        padding: var(--spacing-md);
+        margin-top: var(--spacing-md);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="admin-wrapper">
+      <!-- Sidebar -->
+      <aside class="admin-sidebar">
+        <div class="sidebar-header">
+          <div class="logo" style="color: var(--white)">
+            <img
+              src="../assets/images/logo-white.png"
+              alt="WKF Logo"
+              style="filter: brightness(0) invert(1)"
+            />
+            <h1 style="color: var(--white)">W.K.F Admin</h1>
+          </div>
+        </div>
+
+        <ul class="sidebar-nav">
+          <li>
+            <a href="dashboard.html" class="active">
+              <i class="fas fa-tachometer-alt"></i>
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="donations.html">
+              <i class="fas fa-hand-holding-usd"></i>
+              Donations
+            </a>
+          </li>
+          <li>
+            <a href="donors.html">
+              <i class="fas fa-users"></i>
+              Donors
+            </a>
+          </li>
+          <li>
+            <a href="content.html">
+              <i class="fas fa-edit"></i>
+              Content Management
+            </a>
+          </li>
+          <li>
+            <a href="gallery-admin.html">
+              <i class="fas fa-images"></i>
+              Gallery
+            </a>
+          </li>
+          <li>
+            <a href="programs-admin.html">
+              <i class="fas fa-tasks"></i>
+              Programs
+            </a>
+          </li>
+          <li>
+            <a href="news-admin.html">
+              <i class="fas fa-newspaper"></i>
+              News & Updates
+            </a>
+          </li>
+          <li>
+            <a href="testimonials-admin.html">
+              <i class="fas fa-quote-right"></i>
+              Testimonials
+            </a>
+          </li>
+          <li>
+            <a href="settings.html">
+              <i class="fas fa-cog"></i>
+              Settings
+            </a>
+          </li>
+          <li style="margin-top: auto">
+            <a
+              href="login.html"
+              onclick="return confirm('Are you sure you want to logout?');"
+            >
+              <i class="fas fa-sign-out-alt"></i>
+              Logout
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="admin-main">
+        <!-- Header -->
+        <header class="admin-header">
+          <div>
+            <h2 style="margin-bottom: 0">Dashboard</h2>
+            <p style="color: var(--dark-gray)">Welcome back, Admin</p>
+          </div>
+
+          <div
+            style="display: flex; align-items: center; gap: var(--spacing-md)"
+          >
+            <div style="position: relative">
+              <i
+                class="fas fa-bell"
+                style="
+                  font-size: 1.25rem;
+                  color: var(--dark-gray);
+                  cursor: pointer;
+                "
+              ></i>
+              <span
+                style="
+                  position: absolute;
+                  top: -5px;
+                  right: -5px;
+                  background: var(--accent-orange);
+                  color: var(--white);
+                  font-size: 0.75rem;
+                  padding: 2px 6px;
+                  border-radius: 50%;
+                "
+                >3</span
+              >
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 10px">
+              <img
+                src="../assets/images/admin-avatar.jpg"
+                alt="Admin"
+                style="
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  object-fit: cover;
+                "
+              />
+              <div>
+                <p style="font-weight: 600; margin-bottom: 0">John Admin</p>
+                <p
+                  style="
+                    font-size: 0.875rem;
+                    color: var(--dark-gray);
+                    margin-bottom: 0;
+                  "
+                >
+                  Super Admin
+                </p>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div style="padding: var(--spacing-md)">
+          <!-- Stats Cards -->
+          <div class="stats-cards">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-hand-holding-usd"></i>
+              </div>
+              <div class="stat-details">
+                <h3>Total Donations</h3>
+                <div class="stat-number">KSH 1,234,567</div>
+                <p style="color: var(--success); margin-bottom: 0">
+                  <i class="fas fa-arrow-up"></i> +12% from last month
+                </p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="stat-details">
+                <h3>Total Donors</h3>
+                <div class="stat-number">1,245</div>
+                <p style="color: var(--success); margin-bottom: 0">
+                  <i class="fas fa-arrow-up"></i> +8% from last month
+                </p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-gem"></i>
+              </div>
+              <div class="stat-details">
+                <h3>Active Programs</h3>
+                <div class="stat-number">12</div>
+                <p style="margin-bottom: 0">3 new this year</p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="stat-details">
+                <h3>Unread Messages</h3>
+                <div class="stat-number">24</div>
+                <p style="color: var(--warning); margin-bottom: 0">
+                  <i class="fas fa-exclamation-triangle"></i> 5 urgent
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts Row -->
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 2fr 1fr;
+              gap: var(--spacing-md);
+              margin-top: var(--spacing-md);
+            "
+          >
+            <div class="chart-container">
+              <h3 style="margin-bottom: var(--spacing-md)">Donation Trends</h3>
+              <div
+                style="
+                  height: 300px;
+                  display: flex;
+                  align-items: flex-end;
+                  justify-content: space-around;
+                "
+              >
+                <!-- Simple bar chart placeholder -->
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 60px;
+                  "
+                >
+                  <div
+                    style="
+                      height: 180px;
+                      width: 40px;
+                      background: var(--primary-blue);
+                      border-radius: var(--border-radius-sm);
+                    "
+                  ></div>
+                  <p style="margin-top: 10px">Jan</p>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 60px;
+                  "
+                >
+                  <div
+                    style="
+                      height: 150px;
+                      width: 40px;
+                      background: var(--primary-blue);
+                      border-radius: var(--border-radius-sm);
+                    "
+                  ></div>
+                  <p style="margin-top: 10px">Feb</p>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 60px;
+                  "
+                >
+                  <div
+                    style="
+                      height: 220px;
+                      width: 40px;
+                      background: var(--primary-blue);
+                      border-radius: var(--border-radius-sm);
+                    "
+                  ></div>
+                  <p style="margin-top: 10px">Mar</p>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 60px;
+                  "
+                >
+                  <div
+                    style="
+                      height: 190px;
+                      width: 40px;
+                      background: var(--primary-blue);
+                      border-radius: var(--border-radius-sm);
+                    "
+                  ></div>
+                  <p style="margin-top: 10px">Apr</p>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 60px;
+                  "
+                >
+                  <div
+                    style="
+                      height: 250px;
+                      width: 40px;
+                      background: var(--accent-orange);
+                      border-radius: var(--border-radius-sm);
+                    "
+                  ></div>
+                  <p style="margin-top: 10px">May</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="chart-container">
+              <h3 style="margin-bottom: var(--spacing-md)">
+                Donation by Program
+              </h3>
+              <div style="margin-top: var(--spacing-md)">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 15px;
+                  "
+                >
+                  <span>Education</span>
+                  <span style="font-weight: 600">45%</span>
+                </div>
+                <div
+                  style="
+                    width: 100%;
+                    height: 8px;
+                    background: var(--light-gray);
+                    border-radius: var(--border-radius-sm);
+                    margin-bottom: 20px;
+                  "
+                >
+                  <div
+                    style="
+                      width: 45%;
+                      height: 100%;
+                      background: var(--primary-blue);
+                      border-radius: var(--border-radius-sm);
+                    "
+                  ></div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 15px;
+                  "
+                >
+                  <span>Empowerment</span>
+                  <span style="font-weight: 600">30%</span>
+                </div>
+                <div
+                  style="
+                    width: 100%;
+                    height: 8px;
+                    background: var(--light-gray);
+                    border-radius: var(--border-radius-sm);
+                    margin-bottom: 20px;
+                  "
+                >
+                  <div
+                    style="
+                      width: 30%;
+                      height: 100%;
+                      background: var(--primary-green);
+                      border-radius: var(--border-radius-sm);
+                    "
+                  ></div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 15px;
+                  "
+                >
+                  <span>Peace</span>
+                  <span style="font-weight: 600">20%</span>
+                </div>
+                <div
+                  style="
+                    width: 100%;
+                    height: 8px;
+                    background: var(--light-gray);
+                    border-radius: var(--border-radius-sm);
+                    margin-bottom: 20px;
+                  "
+                >
+                  <div
+                    style="
+                      width: 20%;
+                      height: 100%;
+                      background: var(--accent-orange);
+                      border-radius: var(--border-radius-sm);
+                    "
+                  ></div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                  "
+                >
+                  <span>General</span>
+                  <span style="font-weight: 600">5%</span>
+                </div>
+                <div
+                  style="
+                    width: 100%;
+                    height: 8px;
+                    background: var(--light-gray);
+                    border-radius: var(--border-radius-sm);
+                  "
+                >
+                  <div
+                    style="
+                      width: 5%;
+                      height: 100%;
+                      background: var(--dark-gray);
+                      border-radius: var(--border-radius-sm);
+                    "
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Donations & Activity -->
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 2fr 1fr;
+              gap: var(--spacing-md);
+              margin-top: var(--spacing-md);
+            "
+          >
+            <!-- Recent Donations Table -->
+            <div class="recent-activity">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: var(--spacing-md);
+                "
+              >
+                <h3 style="margin-bottom: 0">Recent Donations</h3>
+                <a href="donations.html" class="btn btn-sm btn-outline"
+                  >View All</a
+                >
+              </div>
+
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Donor</th>
+                    <th>Amount</th>
+                    <th>Program</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>John Mwangi</td>
+                    <td>KSH 10,000</td>
+                    <td>Education</td>
+                    <td>2026-02-12</td>
+                    <td>
+                      <span style="color: var(--success)">Completed</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Sarah Wanjiku</td>
+                    <td>KSH 5,000</td>
+                    <td>Empowerment</td>
+                    <td>2026-02-12</td>
+                    <td>
+                      <span style="color: var(--success)">Completed</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Peter Odhiambo</td>
+                    <td>KSH 25,000</td>
+                    <td>Peace</td>
+                    <td>2026-02-11</td>
+                    <td><span style="color: var(--warning)">Pending</span></td>
+                  </tr>
+                  <tr>
+                    <td>Mary Kimani</td>
+                    <td>KSH 2,500</td>
+                    <td>General</td>
+                    <td>2026-02-11</td>
+                    <td>
+                      <span style="color: var(--success)">Completed</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>James Omondi</td>
+                    <td>KSH 7,500</td>
+                    <td>Education</td>
+                    <td>2026-02-10</td>
+                    <td>
+                      <span style="color: var(--success)">Completed</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Recent Activity Feed -->
+            <div class="recent-activity">
+              <h3 style="margin-bottom: var(--spacing-md)">Recent Activity</h3>
+
+              <div class="activity-item">
+                <div
+                  class="activity-icon"
+                  style="background: rgba(40, 167, 69, 0.1)"
+                >
+                  <i
+                    class="fas fa-hand-holding-usd"
+                    style="color: var(--success)"
+                  ></i>
+                </div>
+                <div class="activity-details">
+                  <p style="margin-bottom: 0">
+                    <strong>John Mwangi</strong> donated KSH 10,000
+                  </p>
+                  <p class="activity-time">5 minutes ago</p>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div
+                  class="activity-icon"
+                  style="background: rgba(23, 162, 184, 0.1)"
+                >
+                  <i class="fas fa-envelope" style="color: var(--info)"></i>
+                </div>
+                <div class="activity-details">
+                  <p style="margin-bottom: 0">
+                    <strong>Sarah Wanjiku</strong> sent a message
+                  </p>
+                  <p class="activity-time">15 minutes ago</p>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div
+                  class="activity-icon"
+                  style="background: rgba(255, 193, 7, 0.1)"
+                >
+                  <i class="fas fa-images" style="color: var(--warning)"></i>
+                </div>
+                <div class="activity-details">
+                  <p style="margin-bottom: 0">
+                    <strong>Admin</strong> added 5 photos to gallery
+                  </p>
+                  <p class="activity-time">1 hour ago</p>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div
+                  class="activity-icon"
+                  style="background: rgba(30, 60, 114, 0.1)"
+                >
+                  <i
+                    class="fas fa-newspaper"
+                    style="color: var(--primary-blue)"
+                  ></i>
+                </div>
+                <div class="activity-details">
+                  <p style="margin-bottom: 0">
+                    <strong>New blog post:</strong> "Education Impact Report
+                    2026"
+                  </p>
+                  <p class="activity-time">3 hours ago</p>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div
+                  class="activity-icon"
+                  style="background: rgba(46, 125, 50, 0.1)"
+                >
+                  <i
+                    class="fas fa-user-plus"
+                    style="color: var(--primary-green)"
+                  ></i>
+                </div>
+                <div class="activity-details">
+                  <p style="margin-bottom: 0">
+                    <strong>New donor</strong> registered
+                  </p>
+                  <p class="activity-time">5 hours ago</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div style="margin-top: var(--spacing-md)">
+            <div
+              style="
+                background: var(--white);
+                border-radius: var(--border-radius-lg);
+                padding: var(--spacing-md);
+              "
+            >
+              <h3 style="margin-bottom: var(--spacing-md)">Quick Actions</h3>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                  gap: var(--spacing-sm);
+                "
+              >
+                <a
+                  href="donations.html"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: var(--spacing-md);
+                    background: var(--off-white);
+                    border-radius: var(--border-radius-md);
+                    transition: all var(--transition-fast);
+                  "
+                >
+                  <i
+                    class="fas fa-file-export"
+                    style="
+                      font-size: 24px;
+                      color: var(--primary-blue);
+                      margin-bottom: 10px;
+                    "
+                  ></i>
+                  <span style="font-weight: 600">Export Reports</span>
+                </a>
+                <a
+                  href="content.html"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: var(--spacing-md);
+                    background: var(--off-white);
+                    border-radius: var(--border-radius-md);
+                    transition: all var(--transition-fast);
+                  "
+                >
+                  <i
+                    class="fas fa-plus-circle"
+                    style="
+                      font-size: 24px;
+                      color: var(--primary-green);
+                      margin-bottom: 10px;
+                    "
+                  ></i>
+                  <span style="font-weight: 600">Add Content</span>
+                </a>
+                <a
+                  href="email-blast.html"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: var(--spacing-md);
+                    background: var(--off-white);
+                    border-radius: var(--border-radius-md);
+                    transition: all var(--transition-fast);
+                  "
+                >
+                  <i
+                    class="fas fa-bullhorn"
+                    style="
+                      font-size: 24px;
+                      color: var(--accent-orange);
+                      margin-bottom: 10px;
+                    "
+                  ></i>
+                  <span style="font-weight: 600">Email Donors</span>
+                </a>
+                <a
+                  href="programs-admin.html"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: var(--spacing-md);
+                    background: var(--off-white);
+                    border-radius: var(--border-radius-md);
+                    transition: all var(--transition-fast);
+                  "
+                >
+                  <i
+                    class="fas fa-chart-line"
+                    style="
+                      font-size: 24px;
+                      color: var(--danger);
+                      margin-bottom: 10px;
+                    "
+                  ></i>
+                  <span style="font-weight: 600">Update Programs</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/admin/dashboard.js"></script>
+  </body>
+</html>

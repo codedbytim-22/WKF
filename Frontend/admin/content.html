@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Management - W.K.F Admin</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .content-card {
+        background: var(--white);
+        border-radius: var(--border-radius-lg);
+        padding: var(--spacing-lg);
+        text-align: center;
+        transition: all var(--transition-normal);
+        cursor: pointer;
+      }
+      .content-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+      .content-icon {
+        width: 80px;
+        height: 80px;
+        background: rgba(30, 60, 114, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto var(--spacing-md);
+        font-size: 2rem;
+        color: var(--primary-blue);
+      }
+      .content-stats {
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-md);
+        color: var(--dark-gray);
+        font-size: 0.875rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="admin-wrapper">
+      <!-- Sidebar -->
+      <aside class="admin-sidebar">
+        <div class="sidebar-header">
+          <div class="logo" style="color: var(--white)">
+            <img
+              src="../assets/images/logo-white.png"
+              alt="WKF Logo"
+              style="filter: brightness(0) invert(1)"
+            />
+            <h1 style="color: var(--white)">W.K.F Admin</h1>
+          </div>
+        </div>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="dashboard.html"
+              ><i class="fas fa-tachometer-alt"></i> Dashboard</a
+            >
+          </li>
+          <li>
+            <a href="donations.html"
+              ><i class="fas fa-hand-holding-usd"></i> Donations</a
+            >
+          </li>
+          <li>
+            <a href="donors.html"><i class="fas fa-users"></i> Donors</a>
+          </li>
+          <li>
+            <a href="content.html" class="active"
+              ><i class="fas fa-edit"></i> Content Management</a
+            >
+          </li>
+          <li>
+            <a href="gallery-admin.html"
+              ><i class="fas fa-images"></i> Gallery</a
+            >
+          </li>
+          <li>
+            <a href="programs-admin.html"
+              ><i class="fas fa-tasks"></i> Programs</a
+            >
+          </li>
+          <li>
+            <a href="news-admin.html"><i class="fas fa-newspaper"></i> News</a>
+          </li>
+          <li>
+            <a href="testimonials-admin.html"
+              ><i class="fas fa-quote-right"></i> Testimonials</a
+            >
+          </li>
+          <li>
+            <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+          </li>
+          <li style="margin-top: auto">
+            <a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+          </li>
+        </ul>
+      </aside>
+
+      <main class="admin-main">
+        <header class="admin-header">
+          <div>
+            <h2 style="margin-bottom: 0">Content Management</h2>
+            <p style="color: var(--dark-gray)">
+              Manage all public-facing content from one place
+            </p>
+          </div>
+          <div>
+            <button class="btn btn-primary">
+              <i class="fas fa-plus-circle"></i> Create New
+            </button>
+          </div>
+        </header>
+
+        <div style="padding: var(--spacing-md)">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              gap: var(--spacing-md);
+            "
+          >
+            <!-- Gallery Management -->
+            <a
+              href="gallery-admin.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="content-card">
+                <div class="content-icon">
+                  <i class="fas fa-images"></i>
+                </div>
+                <h3 style="margin-bottom: 10px">Gallery</h3>
+                <p style="color: var(--dark-gray)">Manage photos and videos</p>
+                <div class="content-stats">
+                  <span><i class="fas fa-image"></i> 24 photos</span>
+                  <span><i class="fas fa-video"></i> 6 videos</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Programs Management -->
+            <a
+              href="programs-admin.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="content-card">
+                <div class="content-icon">
+                  <i class="fas fa-tasks"></i>
+                </div>
+                <h3 style="margin-bottom: 10px">Programs</h3>
+                <p style="color: var(--dark-gray)">
+                  Update program details and goals
+                </p>
+                <div class="content-stats">
+                  <span><i class="fas fa-flag"></i> 3 active</span>
+                  <span><i class="fas fa-chart-line"></i> 2 initiatives</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- News Management -->
+            <a
+              href="news-admin.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="content-card">
+                <div class="content-icon">
+                  <i class="fas fa-newspaper"></i>
+                </div>
+                <h3 style="margin-bottom: 10px">News & Updates</h3>
+                <p style="color: var(--dark-gray)">
+                  Publish and edit news articles
+                </p>
+                <div class="content-stats">
+                  <span><i class="fas fa-file-alt"></i> 12 posts</span>
+                  <span><i class="fas fa-calendar"></i> 3 this month</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Testimonials Management -->
+            <a
+              href="testimonials-admin.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="content-card">
+                <div class="content-icon">
+                  <i class="fas fa-quote-right"></i>
+                </div>
+                <h3 style="margin-bottom: 10px">Testimonials</h3>
+                <p style="color: var(--dark-gray)">Manage success stories</p>
+                <div class="content-stats">
+                  <span><i class="fas fa-user"></i> 8 stories</span>
+                  <span><i class="fas fa-star"></i> 2 pending</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Quick Actions -->
+          <div style="margin-top: var(--spacing-xl)">
+            <h3 style="margin-bottom: var(--spacing-md)">Quick Actions</h3>
+            <div style="display: flex; gap: var(--spacing-md); flex-wrap: wrap">
+              <button class="btn btn-secondary">
+                <i class="fas fa-upload"></i> Upload Photos
+              </button>
+              <button class="btn btn-secondary">
+                <i class="fas fa-pencil-alt"></i> Write News Post
+              </button>
+              <button class="btn btn-secondary">
+                <i class="fas fa-plus-circle"></i> Add Program
+              </button>
+              <button class="btn btn-secondary">
+                <i class="fas fa-star"></i> Add Testimonial
+              </button>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div
+            style="
+              margin-top: var(--spacing-xl);
+              background: var(--white);
+              border-radius: var(--border-radius-lg);
+              padding: var(--spacing-md);
+            "
+          >
+            <h3 style="margin-bottom: var(--spacing-md)">
+              Recent Content Updates
+            </h3>
+            <div style="display: flex; flex-direction: column; gap: 15px">
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 15px;
+                  padding-bottom: 15px;
+                  border-bottom: 1px solid var(--light-gray);
+                "
+              >
+                <div
+                  style="
+                    background: rgba(30, 60, 114, 0.1);
+                    padding: 10px;
+                    border-radius: var(--border-radius-sm);
+                  "
+                >
+                  <i
+                    class="fas fa-image"
+                    style="color: var(--primary-blue)"
+                  ></i>
+                </div>
+                <div style="flex: 1">
+                  <p style="font-weight: 600; margin-bottom: 5px">
+                    Added 5 photos to Gallery - Education category
+                  </p>
+                  <p style="font-size: 0.875rem; color: var(--dark-gray)">
+                    2 hours ago by Admin
+                  </p>
+                </div>
+                <button class="btn btn-sm btn-outline">View</button>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 15px;
+                  padding-bottom: 15px;
+                  border-bottom: 1px solid var(--light-gray);
+                "
+              >
+                <div
+                  style="
+                    background: rgba(46, 125, 50, 0.1);
+                    padding: 10px;
+                    border-radius: var(--border-radius-sm);
+                  "
+                >
+                  <i
+                    class="fas fa-newspaper"
+                    style="color: var(--primary-green)"
+                  ></i>
+                </div>
+                <div style="flex: 1">
+                  <p style="font-weight: 600; margin-bottom: 5px">
+                    Published new article: "500 Scholarships Awarded"
+                  </p>
+                  <p style="font-size: 0.875rem; color: var(--dark-gray)">
+                    Yesterday at 4:30 PM by Admin
+                  </p>
+                </div>
+                <button class="btn btn-sm btn-outline">View</button>
+              </div>
+              <div style="display: flex; align-items: center; gap: 15px">
+                <div
+                  style="
+                    background: rgba(255, 107, 53, 0.1);
+                    padding: 10px;
+                    border-radius: var(--border-radius-sm);
+                  "
+                >
+                  <i
+                    class="fas fa-tasks"
+                    style="color: var(--accent-orange)"
+                  ></i>
+                </div>
+                <div style="flex: 1">
+                  <p style="font-weight: 600; margin-bottom: 5px">
+                    Updated Peace Program funding goal
+                  </p>
+                  <p style="font-size: 0.875rem; color: var(--dark-gray)">
+                    2 days ago by Admin
+                  </p>
+                </div>
+                <button class="btn btn-sm btn-outline">View</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

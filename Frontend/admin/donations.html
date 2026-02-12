@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Donations - W.K.F Admin</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .filter-bar {
+        background: var(--white);
+        padding: var(--spacing-md);
+        border-radius: var(--border-radius-lg);
+        margin-bottom: var(--spacing-md);
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+        align-items: flex-end;
+      }
+      .filter-group {
+        flex: 1 0 200px;
+      }
+      .badge {
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+      .badge-success {
+        background: rgba(40, 167, 69, 0.1);
+        color: var(--success);
+      }
+      .badge-warning {
+        background: rgba(255, 193, 7, 0.1);
+        color: var(--warning);
+      }
+      .badge-danger {
+        background: rgba(220, 53, 69, 0.1);
+        color: var(--danger);
+      }
+      .badge-info {
+        background: rgba(23, 162, 184, 0.1);
+        color: var(--info);
+      }
+      .action-btn {
+        padding: 5px 10px;
+        border-radius: var(--border-radius-sm);
+        border: 1px solid var(--light-gray);
+        background: var(--white);
+        cursor: pointer;
+        transition: all var(--transition-fast);
+        margin-right: 5px;
+      }
+      .action-btn:hover {
+        background: var(--primary-blue);
+        color: var(--white);
+        border-color: var(--primary-blue);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="admin-wrapper">
+      <!-- Sidebar -->
+      <aside class="admin-sidebar">
+        <div class="sidebar-header">
+          <div class="logo" style="color: var(--white)">
+            <img
+              src="../assets/images/logo-white.png"
+              alt="WKF Logo"
+              style="filter: brightness(0) invert(1)"
+            />
+            <h1 style="color: var(--white)">W.K.F Admin</h1>
+          </div>
+        </div>
+        <ul class="sidebar-nav">
+          <li>
+            <a href="dashboard.html"
+              ><i class="fas fa-tachometer-alt"></i> Dashboard</a
+            >
+          </li>
+          <li>
+            <a href="donations.html" class="active"
+              ><i class="fas fa-hand-holding-usd"></i> Donations</a
+            >
+          </li>
+          <li>
+            <a href="donors.html"><i class="fas fa-users"></i> Donors</a>
+          </li>
+          <li>
+            <a href="content.html"
+              ><i class="fas fa-edit"></i> Content Management</a
+            >
+          </li>
+          <li>
+            <a href="gallery-admin.html"
+              ><i class="fas fa-images"></i> Gallery</a
+            >
+          </li>
+          <li>
+            <a href="programs-admin.html"
+              ><i class="fas fa-tasks"></i> Programs</a
+            >
+          </li>
+          <li>
+            <a href="news-admin.html"><i class="fas fa-newspaper"></i> News</a>
+          </li>
+          <li>
+            <a href="testimonials-admin.html"
+              ><i class="fas fa-quote-right"></i> Testimonials</a
+            >
+          </li>
+          <li>
+            <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+          </li>
+          <li style="margin-top: auto">
+            <a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="admin-main">
+        <header class="admin-header">
+          <div>
+            <h2 style="margin-bottom: 0">Donations Management</h2>
+            <p style="color: var(--dark-gray)">
+              View, filter, and manage all donations
+            </p>
+          </div>
+          <div>
+            <button class="btn btn-primary">
+              <i class="fas fa-file-export"></i> Export Report
+            </button>
+          </div>
+        </header>
+
+        <div style="padding: var(--spacing-md)">
+          <!-- Filter Bar -->
+          <div class="filter-bar">
+            <div class="filter-group">
+              <label class="form-label">Date Range</label>
+              <select class="form-control">
+                <option>All time</option>
+                <option>Today</option>
+                <option>This week</option>
+                <option>This month</option>
+                <option>This year</option>
+                <option>Custom</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label class="form-label">Program</label>
+              <select class="form-control">
+                <option>All Programs</option>
+                <option>Education</option>
+                <option>Empowerment</option>
+                <option>Peace</option>
+                <option>General</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label class="form-label">Status</label>
+              <select class="form-control">
+                <option>All Status</option>
+                <option>Completed</option>
+                <option>Pending</option>
+                <option>Failed</option>
+                <option>Refunded</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label class="form-label">Search</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Donor name, email, transaction ID"
+              />
+            </div>
+            <div>
+              <button class="btn btn-secondary">
+                <i class="fas fa-search"></i> Apply Filters
+              </button>
+              <button class="btn btn-outline">Reset</button>
+            </div>
+          </div>
+
+          <!-- Summary Cards -->
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: var(--spacing-md);
+              margin-bottom: var(--spacing-md);
+            "
+          >
+            <div
+              style="
+                background: var(--white);
+                padding: var(--spacing-md);
+                border-radius: var(--border-radius-lg);
+                box-shadow: var(--shadow-sm);
+              "
+            >
+              <p style="color: var(--dark-gray); margin-bottom: 5px">
+                Total Donations
+              </p>
+              <h2 style="color: var(--primary-blue); margin-bottom: 0">
+                KSH 1,234,567
+              </h2>
+            </div>
+            <div
+              style="
+                background: var(--white);
+                padding: var(--spacing-md);
+                border-radius: var(--border-radius-lg);
+                box-shadow: var(--shadow-sm);
+              "
+            >
+              <p style="color: var(--dark-gray); margin-bottom: 5px">
+                This Month
+              </p>
+              <h2 style="color: var(--primary-green); margin-bottom: 0">
+                KSH 345,678
+              </h2>
+            </div>
+            <div
+              style="
+                background: var(--white);
+                padding: var(--spacing-md);
+                border-radius: var(--border-radius-lg);
+                box-shadow: var(--shadow-sm);
+              "
+            >
+              <p style="color: var(--dark-gray); margin-bottom: 5px">Pending</p>
+              <h2 style="color: var(--warning); margin-bottom: 0">
+                KSH 12,500
+              </h2>
+            </div>
+            <div
+              style="
+                background: var(--white);
+                padding: var(--spacing-md);
+                border-radius: var(--border-radius-lg);
+                box-shadow: var(--shadow-sm);
+              "
+            >
+              <p style="color: var(--dark-gray); margin-bottom: 5px">
+                Avg. Donation
+              </p>
+              <h2 style="color: var(--accent-orange); margin-bottom: 0">
+                KSH 2,450
+              </h2>
+            </div>
+          </div>
+
+          <!-- Donations Table -->
+          <div
+            style="
+              background: var(--white);
+              border-radius: var(--border-radius-lg);
+              overflow: hidden;
+              box-shadow: var(--shadow-sm);
+            "
+          >
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Transaction ID</th>
+                  <th>Donor</th>
+                  <th>Amount</th>
+                  <th>Program</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>#WKF-2026-001</td>
+                  <td>John Mwangi</td>
+                  <td>KSH 10,000</td>
+                  <td>Education</td>
+                  <td>2026-02-12</td>
+                  <td><span class="badge badge-success">Completed</span></td>
+                  <td>
+                    <button class="action-btn">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-file-invoice"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#WKF-2026-002</td>
+                  <td>Sarah Wanjiku</td>
+                  <td>KSH 5,000</td>
+                  <td>Empowerment</td>
+                  <td>2026-02-12</td>
+                  <td><span class="badge badge-success">Completed</span></td>
+                  <td>
+                    <button class="action-btn">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-file-invoice"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#WKF-2026-003</td>
+                  <td>Peter Odhiambo</td>
+                  <td>KSH 25,000</td>
+                  <td>Peace</td>
+                  <td>2026-02-11</td>
+                  <td><span class="badge badge-warning">Pending</span></td>
+                  <td>
+                    <button class="action-btn">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-file-invoice"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#WKF-2026-004</td>
+                  <td>Mary Kimani</td>
+                  <td>KSH 2,500</td>
+                  <td>General</td>
+                  <td>2026-02-11</td>
+                  <td><span class="badge badge-success">Completed</span></td>
+                  <td>
+                    <button class="action-btn">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-file-invoice"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#WKF-2026-005</td>
+                  <td>James Omondi</td>
+                  <td>KSH 7,500</td>
+                  <td>Education</td>
+                  <td>2026-02-10</td>
+                  <td><span class="badge badge-success">Completed</span></td>
+                  <td>
+                    <button class="action-btn">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-file-invoice"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#WKF-2026-006</td>
+                  <td>Grace Auma</td>
+                  <td>KSH 15,000</td>
+                  <td>Empowerment</td>
+                  <td>2026-02-09</td>
+                  <td><span class="badge badge-success">Completed</span></td>
+                  <td>
+                    <button class="action-btn">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-file-invoice"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>#WKF-2026-007</td>
+                  <td>David Kimani</td>
+                  <td>KSH 3,000</td>
+                  <td>General</td>
+                  <td>2026-02-08</td>
+                  <td><span class="badge badge-danger">Failed</span></td>
+                  <td>
+                    <button class="action-btn">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="action-btn">
+                      <i class="fas fa-file-invoice"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Pagination -->
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: var(--spacing-md);
+                border-top: 1px solid var(--light-gray);
+              "
+            >
+              <p style="color: var(--dark-gray)">
+                Showing 1-7 of 124 donations
+              </p>
+              <div style="display: flex; gap: 5px">
+                <span
+                  style="
+                    background: var(--primary-blue);
+                    color: var(--white);
+                    padding: 8px 16px;
+                    border-radius: var(--border-radius-sm);
+                  "
+                  >1</span
+                >
+                <a
+                  href="#"
+                  style="
+                    background: var(--light-gray);
+                    color: var(--black);
+                    padding: 8px 16px;
+                    border-radius: var(--border-radius-sm);
+                  "
+                  >2</a
+                >
+                <a
+                  href="#"
+                  style="
+                    background: var(--light-gray);
+                    color: var(--black);
+                    padding: 8px 16px;
+                    border-radius: var(--border-radius-sm);
+                  "
+                  >3</a
+                >
+                <a
+                  href="#"
+                  style="
+                    background: var(--light-gray);
+                    color: var(--black);
+                    padding: 8px 16px;
+                    border-radius: var(--border-radius-sm);
+                  "
+                  >4</a
+                >
+                <a
+                  href="#"
+                  style="
+                    background: var(--light-gray);
+                    color: var(--black);
+                    padding: 8px 16px;
+                    border-radius: var(--border-radius-sm);
+                  "
+                  >5</a
+                >
+                <span style="padding: 8px 16px">...</span>
+                <a
+                  href="#"
+                  style="
+                    background: var(--light-gray);
+                    color: var(--black);
+                    padding: 8px 16px;
+                    border-radius: var(--border-radius-sm);
+                  "
+                  >Last</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script>
+      // Any admin-specific JS
+    </script>
+  </body>
+</html>
